@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camila Monzón | Montaje audiovisual y postproducción</title>
+
+  <!-- Tipografía VT323 -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #0a0a0f;
+      color: #e0e0e0;
+      font-family: 'VT323', monospace;
+    }
+
+    /* Reflejos neón */
+    .neon-text {
+      color: #fff;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+
+    /* Botones arcade */
+    .arcade-btn {
+      background-color: transparent;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .arcade-btn:hover {
+      background-color: #00ffff;
+      color: #0a0a0f;
+      box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    }
+
+    /* Carrusel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px #00ffff44;
+    }
+
+    .carousel-slide {
+      display: none;
+      position: relative;
+    }
+
+    .carousel-slide.active {
+      display: block;
+    }
+
+    .carousel-slide iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      border-radius: 1rem;
+      display: block;
+      border: none;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #0a0a0fdd;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      font-size: 2rem;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background-color: #00ffff;
+      color: #0a0a0f;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    a.youtube-link {
+      color: #00ffff;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    a.youtube-link:hover {
+      color: #ff00ff;
+    }
+  </style>
+</head>
+
+<body class="text-center py-10 space-y-16">
+
+  <!-- Hero principal -->
+  <section class="space-y-4">
+    <h1 class="text-6xl neon-text">Camila Monzón</h1>
+    <h2 class="text-2xl text-[#00ffff]">Montaje audiovisual y postproducción</h2>
+  </section>
+
+  <!-- Carrusel -->
+  <section>
+    <div class="carousel">
+      <!-- Reemplazá los IDs de Vimeo por los tuyos -->
+      <div class="carousel-slide active">
+        <iframe src="https://player.vimeo.com/video/1127964887?autoplay=1&muted=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+
+      <div class="carousel-slide">
+        <iframe src="https://player.vimeo.com/video/1127965124?autoplay=1&muted=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+
+      <div class="carousel-slide">
+        <iframe src="https://player.vimeo.com/video/1127964309?autoplay=1&muted=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+
+      <!-- Navegación -->
+      <button class="carousel-btn prev">⟵</button>
+      <button class="carousel-btn next">⟶</button>
+    </div>
+  </section>
+
+  <!-- Sección Links YouTube con miniaturas -->
+  <section class="space-y-6">
+    <h3 class="text-3xl neon-text">La Fábrica del podcast</h3>
+    <div class="flex flex-wrap justify-center gap-6">
+      
+      <!-- Proyecto 1 -->
+      <a href="https://www.youtube.com/watch?v=Bywl-0hVgR0" target="_blank" class="hover:scale-105 transition-transform duration-300">
+        <img src="https://img.youtube.com/vi/Bywl-0hVgR0/hqdefault.jpg" alt="Miniatura Proyecto 1" class="rounded-lg border-4 border-[#00ffff] hover:border-[#ff00ff] shadow-lg max-w-sm" />
+      </a>
+
+      <!-- Proyecto 2 -->
+      <a href="https://www.youtube.com/watch?v=I_xi6Mapu9M" target="_blank" class="hover:scale-105 transition-transform duration-300">
+        <img src="https://img.youtube.com/vi/I_xi6Mapu9M/hqdefault.jpg" alt="Miniatura Proyecto 2" class="rounded-lg border-4 border-[#00ffff] hover:border-[#ff00ff] shadow-lg max-w-sm" />
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-10 border-t border-[#00ffff44] mt-10">
+    <p>Contacto: <a href="KKK" target="_blank" class="text-[#ff00ff] hover:text-[#00ffff]">@</a></p>
+  </footer>
+
+  <!-- Script -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    let currentIndex = 0;
+    const players = [];
+
+    slides.forEach(slide => {
+      const iframe = slide.querySelector('iframe');
+      const player = new Vimeo.Player(iframe);
+      players.push(player);
+      player.pause().catch(()=>{});
+    });
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        const isActive = i === index;
+        slide.classList.toggle('active', isActive);
+        const player = players[i];
+        if (player) {
+          if (isActive) {
+            player.play().catch(()=>{});
+          } else {
+            player.pause().catch(()=>{});
+          }
+        }
+      });
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    window.addEventListener('load', () => {
+      showSlide(currentIndex);
+    });
+  </script>
+</body>
+</html>
+
+
