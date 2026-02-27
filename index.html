@@ -6,22 +6,30 @@
   <title>Camila Monzón | Montaje audiovisual y postproducción</title>
 
   <!-- Tipografía VT323 -->
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body {
-      background-color: #0a0a0f;
-      color: #e0e0e0;
-      font-family: 'VT323', monospace;
-    }
+  background-color: #0a0a0f; /* fallback si la imagen no carga */
+  background-image: url('/PORTAFOLIO/FONDO/WhatsApp\ Image\ 2026-02-19\ at\ 15.23.43.jpeg'); /* nombre de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* efecto más pro */
+  
+  color: #e0e0e0;
+  font-family: 'Kumbh Sans', sans-serif;;
+}
 
     /* Reflejos neón */
     .neon-text {
-      color: #fff;
-      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+      color: #222121;
+      text-shadow: none;
     }
 
     /* Botones arcade */
@@ -36,19 +44,19 @@
 
     .arcade-btn:hover {
       background-color: #00ffff;
-      color: #0a0a0f;
-      box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+      color: #4d4d4e;
+      box-shadow: 0 0 10px #101111, 0 0 20px #0c0b0c;
     }
 
     /* Carrusel */
     .carousel {
       position: relative;
       width: 100%;
-      max-width: 900px;
+      max-width: 800px;
       margin: 0 auto;
       overflow: hidden;
       border-radius: 1rem;
-      box-shadow: 0 0 25px #00ffff44;
+      box-shadow: none;
     }
 
     .carousel-slide {
@@ -74,8 +82,8 @@
       top: 50%;
       transform: translateY(-50%);
       background-color: #0a0a0fdd;
-      border: 2px solid #00ffff;
-      color: #00ffff;
+      border: 2px solid #ffffff;
+      color: #ffffff;
       font-size: 2rem;
       border-radius: 0.5rem;
       padding: 0.5rem 1rem;
@@ -98,13 +106,13 @@
     }
 
     a.youtube-link {
-      color: #00ffff;
+      color: #080808;
       text-decoration: underline;
       transition: color 0.2s;
     }
 
     a.youtube-link:hover {
-      color: #ff00ff;
+      color: #070707;
     }
   </style>
 </head>
@@ -113,8 +121,8 @@
 
   <!-- Hero principal -->
   <section class="space-y-4">
-    <h1 class="text-6xl neon-text">Camila Monzón</h1>
-    <h2 class="text-2xl text-[#00ffff]">Montaje audiovisual y postproducción</h2>
+    <h1 class="text-4xl neon-text">Camila Monzón</h1>
+    <h2 class="text-2xl text-[#0a0a0f]">Montaje audiovisual y postproducción</h2>
   </section>
 
   <!-- Carrusel -->
@@ -122,13 +130,38 @@
     <div class="carousel">
       <!-- Reemplazá los IDs de Vimeo por los tuyos -->
       <div class="carousel-slide active">
-        <iframe src="https://player.vimeo.com/video/1127964887?autoplay=1&muted=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe 
+src="https://player.vimeo.com/video/1168939083?h=4b8228b16e&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&badge=0&autopause=0" 
+allow="autoplay; fullscreen" 
+allowfullscreen>
+</iframe>
       </div>
 
       <div class="carousel-slide">
-        <iframe src="https://player.vimeo.com/video/1127965124?autoplay=1&muted=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe 
+  src="https://player.vimeo.com/video/1168938370?h=dc71ae124d&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&badge=0&autopause=0" 
+  width="640" 
+  height="360" 
+  frameborder="0" 
+  allow="autoplay; fullscreen; picture-in-picture" 
+  allowfullscreen>
+</iframe>
       </div>
 
+      <div class="carousel-slide">
+  <iframe 
+    src="https://player.vimeo.com/video/1168950702?h=1ca18d36a8&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&badge=0&autopause=0"
+    width="640" 
+    height="360" 
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+     <div class="carousel-slide">
+        <iframe src="https://player.vimeo.com/video/1127964309?autoplay=1&muted=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
       <div class="carousel-slide">
         <iframe src="https://player.vimeo.com/video/1127964309?autoplay=1&muted=1&loop=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
       </div>
@@ -146,16 +179,49 @@
       
       <!-- Proyecto 1 -->
       <a href="https://www.youtube.com/watch?v=Bywl-0hVgR0" target="_blank" class="hover:scale-105 transition-transform duration-300">
-        <img src="https://img.youtube.com/vi/Bywl-0hVgR0/hqdefault.jpg" alt="Miniatura Proyecto 1" class="rounded-lg border-4 border-[#00ffff] hover:border-[#ff00ff] shadow-lg max-w-sm" />
+        <img 
+  src="https://img.youtube.com/vi/Bywl-0hVgR0/hqdefault.jpg" 
+  alt="Miniatura Proyecto 1" 
+  class="max-w-sm"
+/>
       </a>
 
       <!-- Proyecto 2 -->
-      <a href="https://www.youtube.com/watch?v=I_xi6Mapu9M" target="_blank" class="hover:scale-105 transition-transform duration-300">
-        <img src="https://img.youtube.com/vi/I_xi6Mapu9M/hqdefault.jpg" alt="Miniatura Proyecto 2" class="rounded-lg border-4 border-[#00ffff] hover:border-[#ff00ff] shadow-lg max-w-sm" />
-      </a>
+      <a href="https://www.youtube.com/watch?v=KedmXI-3f0I&t=8s" target="_blank" class="hover:scale-105 transition-transform duration-300">
+        <img src="https://img.youtube.com/vi/KedmXI-3f0I/hqdefault.jpg" alt="Miniatura Proyecto 1" 
+  class="max-w-sm"
 
     </div>
   </section>
+
+  <section class="pt-16">
+  <div class="max-w-4xl mx-auto space-y-6">
+
+    <h3 class="text-3xl neon-text">Redes</h3>
+
+    <div class="flex justify-center gap-8 md:gap-10">
+
+
+      <iframe
+        src="https://player.vimeo.com/video/1168956048?title=0&byline=0&portrait=0"
+        class="w-[260px] aspect-[9/16]"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+      <iframe
+        src="https://player.vimeo.com/video/1168956562?title=0&byline=0&portrait=0"
+        class="w-[260px] aspect-[9/16]"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="pt-10 border-t border-[#00ffff44] mt-10">
@@ -207,5 +273,9 @@
   </script>
 </body>
 </html>
+
+
+
+
 
 
