@@ -49,44 +49,51 @@ background-color: #ffffff;
     }
 
     /* Carrusel */
-   .carousel {
-  width: 95%;
+.carousel {
+  position: relative;
+  width: 92%;
   max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 20px;
 }
 
-    .carousel-slide {
-      display: none;
-      position: relative;
-    }
+.carousel-slide {
+  display: none;
+  position: relative;
+}
 
-    .carousel-slide.active {
-      display: block;
-    }
+.carousel-slide.active {
+  display: block;
+}
 
-    .carousel-slide iframe {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16/9;
-      border-radius: 1rem;
-      display: block;
-      border: none;
-    }
+.carousel-slide iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 70vh;
+  border: none;
+  border-radius: 20px;
+  display: block;
+}
 
-    .carousel-btn {
+/* Flechas */
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  
+  z-index: 100;
+
   width: 56px;
   height: 56px;
 
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+
+  background: rgba(0,0,0,0.25);
   backdrop-filter: blur(10px);
 
   color: white;
@@ -95,22 +102,50 @@ background-color: #ffffff;
   cursor: pointer;
 
   opacity: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-    .carousel-btn:hover {
-  background: rgba(255,255,255,.9);
+/* Mostrar flechas al pasar el mouse */
+.carousel:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.9);
   color: black;
   transform: translateY(-50%) scale(1.08);
 }
 
-    .carousel-btn.prev {
-      left: 10px;
-    }
+.carousel-btn.prev {
+  left: 20px;
+}
 
-    .carousel-btn.next {
-      right: 10px;
-    }
+.carousel-btn.next {
+  right: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .carousel {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+}
 
     a.youtube-link {
       color: #080808;
